@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabbed Slider</title>
+<script src="https://kit.fontawesome.com/72710ecae5.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.tabs {
+  display: flex;
+  border-radius: 100px;
+  gap: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.tab-link {
+  padding: 1rem;
+  background: #f7f6f6;
+  cursor: pointer;
+  transition: all 200ms ease;
+  font-size: 1rem;
+  border-radius: 100px;
+  font-family: sans-serif;
+}
+
+.tab-link.active {
+    background: black;
+  color: #f0eded;
+  cursor: default;
+}
+
+.tab-link:hover {
+  background: black;
+  color: white;
+}
+
+.slider {
+    display: none;
+}
+
+.slider.active {
+    display: block;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.slick-slide {
+    margin: 0 10px;
+}
+
+/* Arrow Styles */
+span.prev_arrow, span.next_arrow {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px; /* Centers the text vertically */
+    background-color: white;
+    color: black;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+span.prev_arrow {
+  right: 130px;
+}
+
+span.next_arrow {
+  right: 70px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tab-link {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 0.8rem; /* Adjust padding */
+    }
+
+    .container {
+        padding: 30px 5px; /* Reduced padding */
+    }
+
+    span.prev_arrow, span.next_arrow {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 18px; /* Smaller arrows */
+        margin-top: 20px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-link {
+        font-size: 0.8rem; /* Smaller font size */
+        padding: 0.6rem; /* Adjust padding */
+    }
+
+    .container {
+        padding: 20px 5px; /* Reduced padding */
+    }
+
+    span.prev_arrow, span.next_arrow {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px; /* Smaller arrows */
+        margin-top: 20px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <div class="tab-link active" data-tab="tab-1">Headphones</div>
+        <div class="tab-link" data-tab="tab-2">Earphones</div>
+        <div class="tab-link" data-tab="tab-3">Speakers</div>
+        <div class="tab-link" data-tab="tab-4">Accessories</div>
+    </div>
+
+    <div class="slider active" id="tab-1">
+        <div><img src="./img/vibrance-zenithpulse-goldtone-01.jpeg" alt="Tab 1 Image 1"></div>
+        <div><img src="./img/vibrance-soundbloom-crimsonshadow-01.jpeg" alt="Tab 1 Image 2"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-02_39347867-2ecf-426a-8c16-66cc1fde9016.jpeg" alt="Tab 1 Image 3"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-02.jpeg" alt="Tab 1 Image 4"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-02 (1).jpeg" alt="Tab 1 Image 5"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-01_15892e7c-3605-4b3e-9188-ec6cfcbdbe03.jpeg"alt="Tab 1 Image 6"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-01.jpeg" alt="Tab 1 Image 7"></div>
+        <div><img src="./img/sonicpulse-flowharmony-goldtone-01 (1).jpeg" alt="Tab 1 Image 8"></div>
+    </div>
+
+    <div class="slider" id="tab-2">
+        <div><img src="./img/aureal-wavewhisper-goldtone-02.jpeg" alt="Tab 2 Image 1"></div>
+        <div><img src="./img/resonance-stealthprecision-black-01.jpeg" alt="Tab 2 Image 2"></div>
+        <div><img src="./img/resonance-whisperflow-sand-01.jpeg" alt="Tab 2 Image 3"></div>
+        <div><img src="./img/sonicpulse-rhythmiq-anthracite-01.jpeg" alt="Tab 2 Image 4"></div>
+        <div><img src="./img/sonicpulse-rhythmiq-black-01.jpeg" alt="Tab 2 Image 5"></div>
+        <div><img src="./img/soundsphere-chargingcase-pink-01.jpeg" alt="Tab 2 Image 6"></div>
+        <div><img src="./img/soundsphere-trioathletica-black-01.jpeg" alt="Tab 2 Image 7"></div>
+        <div><img src="./img/soundsphere-trioathletica-sand-01.jpeg" alt="Tab 2 Image 8"></div>
+    </div>
+
+    <div class="slider" id="tab-3">
+        <div><img src="./img/aureal-cinemapro-brown-01.jpeg" alt="Tab 3 Image 1"></div>
+        <div><img src="./img/resonance-coniclux-goldtone-01.jpeg" alt="Tab 3 Image 2"></div>
+        <div><img src="./img/resonance-coniclux-gray-01.jpeg" alt="Tab 3 Image 3"></div>
+        <div><img src="./img/resonance-sonicsilhouette-black-01.jpeg" alt="Tab 3 Image 4"></div>
+        <div><img src="./img/resonance-sonicsilhouette-goldtone-02.jpeg" alt="Tab 3 Image 5"></div>
+        <div><img src="./img/vibrance-crimsonedition-crimsonshadow-01.jpeg" alt="Tab 3 Image 6"></div>
+        <div><img src="./img/vibrance-soundmajesty-oakaluminate-01.jpeg" alt="Tab 3 Image 7"></div>
+        <div><img src="./img/vibrance-soundroll-gray-01.jpeg" alt="Tab 3 Image 8"></div>
+    </div>
+
+    <div class="slider" id="tab-4">
+        <div><img src="./img/aureal-aquasprint-pink-01 (1).jpeg" alt="Tab 4 Image 1"></div>
+        <div><img src="./img/resonance-audiocable-black-01.png" alt="Tab 4 Image 2"></div>
+        <div><img src="./img/S5.jpeg" alt="Tab 4 Image 3"></div>
+        <div><img src="./img/vibrance-touchcommander-goldtone-01.jpeg" alt="Tab 4 Image 4"></div>
+        <div><img src="./img/sonicpulse-usbacable-chestnut-01.png" alt="Tab 4 Image 5"></div>
+        <div><img src="./img/sonicpulse-usbacable-goldtone-01.png" alt="Tab 4 Image 6"></div>
+        <div><img src="./img/resonance-additearbuds-blue-01.jpeg" alt="Tab 4 Image 7"></div>
+        <div><img src="./img/soundsphere-bracket-gray-01.jpeg" alt="Tab 4 Image 8"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: '<span class="prev_arrow"><i class="fas fa-angle-left ic-1"></i></span>',
+        nextArrow: '<span class="next_arrow"><i class="fas fa-angle-right ic-1"></i></span>',
+        dots: false,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+    $('.tab-link').on('click', function() {
+        var tabID = $(this).attr('data-tab');
+
+        $('.tab-link').removeClass('active');
+        $(this).addClass('active');
+
+        $('.slider').removeClass('active');
+        $('#' + tabID).addClass('active').slick('refresh');
+    });
+});
+</script>
+
+</body>
+</html>
